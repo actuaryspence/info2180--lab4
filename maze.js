@@ -49,6 +49,12 @@ window.onload = function(){
 		win = false;
     });
     let maze_game = document.getElementById("maze");
+    maze_game.addEventListener("mouseleave",function(){
+		for(let index = 0; index<walls.length-1; index++){
+			walls[index].setAttribute("class", "boundary youlose");
+		}
+		hit_wall = true;
+	});
 	maze_game.addEventListener("mouseover",function(){
 		if(hit_wall === true){
 			for(let index = 0; index < walls.length-1; index++){
