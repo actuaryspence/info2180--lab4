@@ -23,5 +23,13 @@ window.onload = function(){
 				alert("You Win!");
 			}
 		});
+    });
+    start_game.addEventListener("click",function(){
+		if(hit_wall === true){
+			for(let index = 0; index<walls.length-1; index++){
+				walls[index].setAttribute("class","boundary");
+			}
+			hit_wall = false;
+		}
 	});
 };
